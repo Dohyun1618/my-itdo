@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class WelcomeController {
-	
+
 	private static final Logger log = LoggerFactory.getLogger(WelcomeController.class);
 
 	@GetMapping("/helloworld")
 	public String welcome(String email, Model model) {
-		log.debug(">>>>>>>>> email : {}" , email);
+		log.info(">>>>>>>>> email : {}", email);
 		model.addAttribute("email", email);
 		return "welcome";
 	}
